@@ -7,11 +7,11 @@
 | Created    | January 18, 2021                                                                                                                           |
 
 ## Summary (2-5 sentences)
-The DVM should support price requests for the YAM/USD price index.
+The DVM should support price requests for the YAM/USD price index. In order to do so it will need to support YAM/ETH and ETH/USD price indeces.
 
 ## Motivation
 The DVM currently does not support the YAMUSD price index.
-Supporting the YAMUSD price identifier would enable the creation of the YAMO stablecoin, backed by YAM as collateral. YAM token holders can utilize this as a hedging tool, and could go long or use YAMO for functional purposes.There is little cost associated with adding this price identifier, as there are multiple free and easily accessible data sources available.
+Supporting the YAMUSD price identifier would enable the creation of the YAMO stablecoin, built using the OpenDAO perpetual stablecoin framework (https://opendao.gitbook.io/whitepaper-v2/) and backed by YAM as collateral. YAM token holders can utilize this as a hedging tool, and could go long or use YAMO for other financial purposes. There is also potential for the YAM DAO itself to use YAM reserves or newly minted tokens as a community backed line of credit to mint YAMO stablecoins to support its mission. There is little cost associated with adding this price identifier, as there are multiple free and easily accessible data sources available.
 
 More information on YAM can be found on the website: https://yam.finance/
 
