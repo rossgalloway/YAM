@@ -16,7 +16,7 @@ The YamDAO is currently building out https://degenerative.finance, which is a de
 
 Yam is a collaborative community innovating at the intersection of decentralized governance and programmable finance. Our open, fair and ethical philosophy fosters an inclusive and energetic culture. We are a fair-launch DAO pushing the bounds of innovation and launching experiments to enable the very promise of what DeFi can become for the world: a global, permissionless financial ecosystem.
 
-The YamDAO has a treasury of approximately $4.2 million in stablecoins, ETH, and assorted other assets (as of 1/23/2020). The treasury does not contain YAM tokens. 
+The YamDAO has a treasury of approximately $4.2 million in stablecoins, ETH, and assorted other assets (as of 1/23/2020). The treasury does not contain YAM tokens. The YAM marketcap is approximately $23 million and trades with roughly $1 million of volume daily (https://www.coingecko.com/en/coins/yam). 
 
 Current Projects under the YAM umbrella:
 Degenerative Finance: Derivatives built using the UMA Protocol (https://degenerative.finance)
@@ -29,3 +29,20 @@ To accomplish this upgrade, two changes need to be made:
    
 - A final fee of [xxx Currency] needs to be added for YAM in the Store contract.
 
+## Rationale
+This change encourages wider adoption of the UMA protocol through strengthening ties with the YAM DAO. Beyond allowing YAM token holders to mint stablecoins and other future synthetic assets with their tokens, it opens up new strategies for treasury management within the DAO itself, including community backed credit lines.  
+
+[Chosen Fee] was chosen because the current final fee [insert rationale].
+
+## Implementation
+This change has no implementation other than adding the YAM address to the collateral currency AddressWhitelist and adding the YAM final fee to the Store contract.
+
+
+## Security considerations
+
+Anyone deploying a new priceless token contract using this collateral should take note to parameterize the contract appropriately to the reference asset’s volatility and liquidity characteristics to avoid the loss of funds for synthetic token holders. Additionally, the contract deployer should ensure that there is a network of liquidators and disputers ready to perform the services necessary to keep the contract solvent. $UMA-holders should evaluate the ongoing cost and benefit of supporting this asset as collateral and also contemplate removing support of this collateral if liquidity concerns are identified. $UMA-holders should take note of the collateral’s nature as liquidity of the collateral changes, or if added robustness (eg via TWAPs) are necessary to prevent market manipulation.
+
+YAM itself should present  little risk. It is a standard ERC-20 token. The rebasing function of the token contract was turned off on December 26, 2020 (https://etherscan.io/tx/0xf7b24fc7b69b6b85f28089691406ba57d878a799f0753d2f6a9f2d5821b77c9a) so there are no longer complications that would arise from a dynamically changing supply. The Governable parameters of the Token are controlled by YAM governance, which requires an on-chain vote for any changes and is protected from malicious action by a governor contract with a 3/5 multisig that can veto governance actions if deemed malicious.
+
+
+The project was audited by [insert]: [Insert YAM Audit Link]
